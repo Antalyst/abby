@@ -4,11 +4,11 @@
     <div>
         <slot />
     </div>
-    <nav class=" bg-white flex items-center p-4 px-6 fixed bottom-6 left-1/2 -translate-x-1/2 z-50   rounded-full border border-white/50 shadow-lg transition-all duration-500 ease-in-out">
+    <nav class=" bg-white flex items-center p-2 px-6 fixed bottom-6 left-1/2 -translate-x-1/2 z-50   rounded-full border border-white/50 shadow-lg transition-all duration-500 ease-in-out">
       
       <div class="flex-shrink-0">
         <NuxtLink to="/">
-          <img src="/logo/logo.png" alt="logo" class="w-8 hover:rotate-12 transition-transform duration-300" :class="{'rotate-180': navigationList}">
+          <img src="/logo/logo.png" alt="logo" class="w-6 hover:rotate-12 transition-transform duration-300" :class="{'rotate-180': navigationList}">
         </NuxtLink>
       </div>
 
