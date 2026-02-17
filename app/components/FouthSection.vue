@@ -1,10 +1,10 @@
 <template>
-  <div class="w-full h-dvh flex flex-col items-center justify-between p-10 ">
-    <h1 class="w-full text-[#F39EB6] text-7xl font-grandstander drop-shadow-lg font-bold mb-6">
+  <div class="w-full h-dvh flex flex-col items-center justify-between p-5 md:p-10">
+    <h1 class="w-full text-[#F39EB6] text-5xl md:text-7xl font-grandstander drop-shadow-lg font-bold mb-6 text-center md:text-left">
       Travels
     </h1>
 
-    <div class="relative w-full flex-grow flex items-center justify-center">
+    <div class="hidden md:flex relative w-full flex-grow items-center justify-center">
       <Transition name="stagger-slide" mode="out-in">
         <div :key="currentIndex" class="w-full flex items-center justify-center gap-4 p-10">
           
@@ -55,6 +55,55 @@
         </div>
       </Transition>
     </div>
+
+    <div class="md:hidden w-full flex-grow flex flex-col items-center gap-6 overflow-y-auto pb-10">    
+        <div class="flex items-center justify-center gap-2 w-full pt-4">
+            <div class="w-20 h-40 overflow-hidden rounded-full shadow-md">
+            <img :src="travels[currentIndex].gallery[0].imagesOne[0]" 
+                class="w-full h-full object-cover" 
+                alt="Negros Side 1">
+            </div>
+            
+            <div class="relative w-24 h-64 overflow-hidden rounded-full shadow-xl border-4 border-white">
+            <img :src="travels[currentIndex].heroImage" 
+                class="w-full h-full object-cover" 
+                alt="Negros Main">
+           
+            </div>
+
+            <div class="w-20 h-40 overflow-hidden rounded-full shadow-md">
+            <img :src="travels[currentIndex].gallery[0].imagesOne[1]" 
+                class="w-full h-full object-cover" 
+                alt="Negros Side 2">
+            </div>
+        </div>
+
+        <div class="w-full bg-white/90 p-6 rounded-[2.5rem] shadow-xl border border-pink-50">
+            <h2 class="text-3xl font-grandstander font-extrabold text-[#F39EB6] mb-3 text-center">
+            {{ travels[currentIndex].title }}
+            </h2>
+            <p class="text-sm text-gray-600 leading-relaxed italic text-center mb-6">
+            {{ travels[currentIndex].description }}
+            </p>
+            
+            <div class="flex justify-center gap-6">
+            <button 
+                @click="currentIndex--" 
+                :disabled="currentIndex === 0" 
+                class="w-14 h-14 flex items-center justify-center bg-white shadow-lg rounded-full text-[#F39EB6] font-bold disabled:opacity-20 active:scale-90 transition-transform"
+            >
+                &lt;
+            </button>
+            <button 
+                @click="currentIndex++" 
+                :disabled="currentIndex === travels.length - 1"
+                  class="w-14 h-14 flex items-center justify-center bg-white shadow-lg rounded-full text-[#F39EB6] font-bold disabled:opacity-20 active:scale-90 transition-transform"
+            >
+                &gt;
+            </button>
+            </div>
+        </div>
+        </div>
   </div>
 </template>
 
@@ -86,37 +135,17 @@ const travels = ref([
 </script>
 
 <style scoped>
-
 .stagger-slide-enter-active,
 .stagger-slide-leave-active {
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.stagger-slide-enter-from {
-  opacity: 0;
-  transform: translateX(100px);
-}
+.stagger-slide-enter-from { opacity: 0; transform: translateX(100px); }
+.stagger-slide-leave-to { opacity: 0; transform: translateX(-100px); }
 
-.stagger-slide-leave-to {
-  opacity: 0;
-  transform: translateX(-100px);
-}
-
-
-.stagger-slide-enter-active .stagger-item-1 {
-  transition: all 0.6s ease;
-  transition-delay: 0.1s;
-}
-
-.stagger-slide-enter-active .stagger-item-2 {
-  transition: all 0.6s ease;
-  transition-delay: 0.3s;
-}
-
-.stagger-slide-enter-active .stagger-item-3 {
-  transition: all 0.6s ease;
-  transition-delay: 0.5s;
-}
+.stagger-slide-enter-active .stagger-item-1 { transition: all 0.6s ease; transition-delay: 0.1s; }
+.stagger-slide-enter-active .stagger-item-2 { transition: all 0.6s ease; transition-delay: 0.3s; }
+.stagger-slide-enter-active .stagger-item-3 { transition: all 0.6s ease; transition-delay: 0.5s; }
 
 .stagger-slide-enter-from .stagger-item-1,
 .stagger-slide-enter-from .stagger-item-2,

@@ -1,7 +1,7 @@
 <template>
-  <div class="relative min-h-screen bg-[#FFFBFB] font-grandstander scroll-smooth"> 
+  <div class="relative min-h-screen bg-[#FFFBFB] w-full font-grandstander scroll-smooth"> 
 
-    <div>
+    <div class="w-full">
         <slot />
     </div>
     
@@ -51,6 +51,9 @@
 </script>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
 
 ::-webkit-scrollbar {
   width: 12px;
