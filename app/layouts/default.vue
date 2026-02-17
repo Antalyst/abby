@@ -1,15 +1,16 @@
 <template>
-  <div class="relative min-h-screen bg-[#FFFBFB] font-grandstander"> 
+  <div class="relative min-h-screen bg-[#FFFBFB] font-grandstander scroll-smooth"> 
 
     <div>
         <slot />
     </div>
-    <nav class=" bg-white flex items-center p-2 px-6 fixed bottom-6 left-1/2 -translate-x-1/2 z-50   rounded-full border border-white/50 shadow-lg transition-all duration-500 ease-in-out">
+    
+    <nav class="bg-white flex items-center p-2 px-6 fixed bottom-6 left-1/2 -translate-x-1/2 z-50 rounded-full border border-white/50 shadow-lg transition-all duration-500 ease-in-out">
       
       <div class="flex-shrink-0">
-        <NuxtLink to="/">
+        <a href="#home">
           <img src="/logo/logo.png" alt="logo" class="w-6 hover:rotate-12 transition-transform duration-300" :class="{'rotate-180': navigationList}">
-        </NuxtLink>
+        </a>
       </div>
 
       <div 
@@ -18,13 +19,13 @@
       >
         <ul class="flex items-center gap-6 text-gray-500 text-sm tracking-wide whitespace-nowrap">
           <li class="hover:text-pink-400 transition-colors">
-            <NuxtLink to="/nature">Nature</NuxtLink>
+            <a href="#nature">Nature</a>
           </li>
           <li class="hover:text-pink-400 transition-colors">
-            <NuxtLink to="/about">About me</NuxtLink>
+            <a href="#about">About me</a>
           </li>
           <li class="hover:text-pink-400 transition-colors">
-            <NuxtLink to="/travels">Travels</NuxtLink>
+            <a href="#travels">Travels</a>
           </li>
         </ul>
       </div>
@@ -39,7 +40,6 @@
         </button>
       </div>
     </nav>
-    
   </div>
 </template>
 
@@ -49,3 +49,10 @@
       navigationList.value = !navigationList.value;
   }
 </script>
+
+<style>
+/* This makes the jump to sections smooth instead of instant */
+html {
+  scroll-behavior: smooth;
+}
+</style>
