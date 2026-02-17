@@ -56,7 +56,7 @@
       </Transition>
     </div>
 
-    <div class="md:hidden w-full flex-grow flex flex-col items-center gap-6 overflow-y-auto pb-10">    
+    <div class="md:hidden w-full flex-grow flex flex-col items-center gap-6  pb-10">    
         <div class="flex items-center justify-center gap-2 w-full pt-4">
             <div class="w-20 h-40 overflow-hidden rounded-full shadow-md">
             <img :src="travels[currentIndex].gallery[0].imagesOne[0]" 
