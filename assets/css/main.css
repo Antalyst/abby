@@ -4,3 +4,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+
+::-webkit-scrollbar-track {
+  background: #FFFBFB; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F39EB6; 
+  border-radius: 10px; /* Makes it rounded to match your nav buttons */
+  border: 2px solid #FFFBFB; /* Adds a gap to make it look "floating" */
+}
+
+/* Hover effect on the scrollbar */
+::-webkit-scrollbar-thumb:hover {
+  background: #f187a5; /* A slightly darker pink on hover */
+}

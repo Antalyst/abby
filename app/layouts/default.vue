@@ -51,8 +51,28 @@
 </script>
 
 <style>
-/* This makes the jump to sections smooth instead of instant */
-html {
-  scroll-behavior: smooth;
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #FFFBFB; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #F39EB6 !important; 
+  border-radius: 20px;
+  border: 3px solid #FFFBFB; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ef86a3 !important;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #F39EB6 #FFFBFB;
 }
 </style>
