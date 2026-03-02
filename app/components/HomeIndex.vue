@@ -15,7 +15,7 @@
               </div>
               
               <div class="flex flex-col items-center gap-3 p-2">
-                  <h1 class="text-[#F39EB6] font-bold text-xl tracking-tight">ABEGAIL DALOS</h1>
+                  <h1 class="text-[#F39EB6] font-bold text-xl tracking-tight">ABEGAIL DALLOS</h1>
                   <div class="flex gap-6"> 
                     <div v-for="icon in icons" :key="icon.name">
                       <Icon class="text-[#F39EB6]" :name="icon.name" :style="{ color: icon.color }" :size="'28px'" :color="icon.color" />
